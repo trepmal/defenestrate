@@ -470,6 +470,7 @@ header a.genericon {
 	margin-left: 10px;
 }
 .aligncenter {
+	display: block;
 	margin: 0 auto;
 }
 .entry-content img,
