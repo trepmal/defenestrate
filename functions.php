@@ -168,7 +168,7 @@ function defenestrate_comment( $comment, $args, $depth ) {
 				<?php comment_text(); ?>
 			</section><!-- .comment-content -->
 
-			<footer class="comment-meta comment-author comment-timestamp">
+			<!--<footer class="comment-meta comment-author comment-timestamp">
 				<?php
 					// echo get_avatar( $comment, 44 );
 					// printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
@@ -183,7 +183,7 @@ function defenestrate_comment( $comment, $args, $depth ) {
 					// 	sprintf( __( '%1$s at %2$s', 'defenestrate' ), get_comment_date(), get_comment_time() )
 					// );
 				?>
-			</header><!-- .comment-meta -->
+			</footer>--><!-- .comment-meta -->
 			<div class="reply">
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'defenestrate' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->

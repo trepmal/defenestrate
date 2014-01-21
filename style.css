@@ -1,6 +1,6 @@
 /**
  * Theme Name: Defenestrate
- * Theme URI:
+ * Theme URI: github.com/trepmal/defenestrate
  * Description: When you just need to throw your old theme out the window
  * Author: Kailey Lampert
  * Author URI: kaileylampert.com
@@ -129,7 +129,7 @@ small,
 	overflow: hidden;
 }
 .has-thumbnail .entry-title {
-
+}
 .entry-title img {
 	top: 0;
 	max-width: 100%;
