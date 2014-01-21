@@ -88,6 +88,11 @@ table {
 	font-size: 1.4rem;
 	line-height: 1.6rem;
 }
+blockquote {
+}
+blockquote p {
+	margin: 0;
+}
 /*
  ######  ##          ###     ######   ######  ########  ######
 ##    ## ##         ## ##   ##    ## ##    ## ##       ##    ##
