@@ -524,5 +524,5 @@ img#wpstats {
    ##    ######## ##     ## ##         #######  ##     ## ##     ## ##     ##    ##        ##     ## ##     ##  ######  ##    ##  ######
 */
 body .syntaxhighlighter {
-	0.6em!important
+	font-size: 0.6em !important;
 }
