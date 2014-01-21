@@ -19,9 +19,11 @@
 				// 'pagelink'         => '%-',
 				// 'echo'             => 1
 			) ); ?>
+			<?php if ( is_single() ) : ?>
 		<footer class="liner">
-		Posted in <?php the_category( ', ' );  the_tags( ' as well as ', ', ' ); ?>.
+			Posted in <?php the_category( ', ' );  the_tags( ' as well as ', ', ' ); ?>.
 		</footer>
+	<?php endif; ?>
 		</div>
 	</article>
 		<!-- <div class="liner entry-comments"> -->

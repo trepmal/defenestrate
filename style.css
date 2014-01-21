@@ -76,6 +76,8 @@ pre {
 	font-size: 1.1rem;
 	line-height: 1.3rem;
 	overflow-x: scroll;
+	border: 1px solid #eee;
+	padding: 5px;
 }
 pre code {
 	padding: 0;
