@@ -84,7 +84,10 @@ pre code {
 	white-space: pre;
 	background: none;
 }
-
+table {
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+}
 /*
  ######  ##          ###     ######   ######  ########  ######
 ##    ## ##         ## ##   ##    ## ##    ## ##       ##    ##
