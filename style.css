@@ -67,6 +67,22 @@ p {
 	margin-bottom: 2rem;
 }
 
+code {
+	padding: 0 3px;
+	white-space: nowrap;
+	background: #ddd;
+}
+pre {
+	font-size: 1.1rem;
+	line-height: 1.3rem;
+	overflow-x: scroll;
+}
+pre code {
+	padding: 0;
+	white-space: pre;
+	background: none;
+}
+
 /*
  ######  ##          ###     ######   ######  ########  ######
 ##    ## ##         ## ##   ##    ## ##    ## ##       ##    ##
@@ -87,17 +103,6 @@ small,
 	text-transform: uppercase;
 }
 
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
-}
-.aligncenter {
-	float: none;
-	display: block;
-	margin: 0 auto;
-}
 /*
  ######  ######## ########  ##     ##  ######  ######## ##     ## ########  ########
 ##    ##    ##    ##     ## ##     ## ##    ##    ##    ##     ## ##     ## ##
