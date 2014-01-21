@@ -1,7 +1,7 @@
 
 	<article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 		<div class="entry-title">
-		<?php the_post_thumbnail('post-thumbnail'); ?>
+		<?php if ( is_singular() ) the_post_thumbnail('post-thumbnail'); ?>
 		<h1 class="liner"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 		</div>
 		<div class="liner entry-content">

@@ -143,15 +143,25 @@ small,
 	min-width: 600px;
 	height: auto;
 	position: absolute;
-	z-index: -1;
 	-webkit-filter: saturate(10%) brightness( 200% ) contrast( 50% );
 }
+.page .has-thumbnail .entry-title,
 .single .has-thumbnail .entry-title {
 	padding-top: 0;
+	min-height: 300px;
+	overflow: hidden;
 }
+.page .has-thumbnail .entry-title img,
 .single .has-thumbnail .entry-title img {
-	position: static;
+	/*position: absolute;*/
+	width: 100%;
+	bottom: 0;
+	left: 0;
 	-webkit-filter: none;
+}
+.entry-title h1 {
+	position: relative;
+	z-index: 2;
 }
 article.hentry {
 }
