@@ -597,4 +597,15 @@ body .syntaxhighlighter {
 		/*position: relative;*/
 		/*overflow: hidden;*/
 	}
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		margin: 0 0 20px;
+		float: left;
+		width: 32%;
+	}
+	.comment-form-email {
+		margin: 0 2%;
+	}
 }
