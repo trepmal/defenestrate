@@ -15,3 +15,9 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+	if ( ! is_home() ) {
+		echo '<a href="'. esc_url( home_url() ) .'" class="genericon genericon-home home-link" title="Home"></a>';
+	}
+?>
+

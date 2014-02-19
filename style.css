@@ -379,6 +379,15 @@ button:focus,
 #      #    # #    #   #   #    #    #   ## #    #  #  #
 #       ####   ####    #    ####     #    # #    #   ##
 */
+.home-link {
+	position: fixed;
+	z-index: 2;
+	top: 40px;
+	left: 40px;
+	font-size: 4em;
+	color: #ddd;
+	text-decoration: none;
+}
 /*
 nav.post-nav {
 	position: relative;
@@ -573,6 +582,9 @@ body .syntaxhighlighter {
 @media screen and (max-width: 600px) {
 	h1 {
 		font-size: 2rem;
+	}
+	.home-link {
+		position: static;
 	}
 	.container {
 		/*text-align: left;*/
