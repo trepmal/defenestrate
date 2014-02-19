@@ -55,6 +55,8 @@ function defenestrate_css_js() {
 	wp_enqueue_style( 'font-genericons', get_stylesheet_directory_uri(). '/genericons/genericons.css' );
 	wp_enqueue_style( 'defenestrate', get_stylesheet_uri(), array( 'font-google', 'font-genericons' ) );
 
+	wp_enqueue_script( 'defenestrate', get_stylesheet_directory_uri() .'/js/functions.js', array( 'jquery' ) );
+
 	// wp_enqueue_script( 'jquery' );
 	if ( is_single() ) {
 		wp_enqueue_script( 'comment-reply' );
