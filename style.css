@@ -560,3 +560,29 @@ img#wpstats {
 body .syntaxhighlighter {
 	font-size: 0.6em !important;
 }
+
+/*
+########  ########  ######  ########   #######  ##    ##  ######  #### ##     ## ########
+##     ## ##       ##    ## ##     ## ##     ## ###   ## ##    ##  ##  ##     ## ##
+##     ## ##       ##       ##     ## ##     ## ####  ## ##        ##  ##     ## ##
+########  ######    ######  ########  ##     ## ## ## ##  ######   ##  ##     ## ######
+##   ##   ##             ## ##        ##     ## ##  ####       ##  ##   ##   ##  ##
+##    ##  ##       ##    ## ##        ##     ## ##   ### ##    ##  ##    ## ##   ##
+##     ## ########  ######  ##         #######  ##    ##  ######  ####    ###    ########
+*/
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 2rem;
+	}
+	.container {
+		/*text-align: left;*/
+		font-size: 1.2rem;
+		/*line-height: 160%;*/
+		padding: 5px;
+	}
+	.entry-title {
+		padding: 15px 0;
+		/*position: relative;*/
+		/*overflow: hidden;*/
+	}
+}
