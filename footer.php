@@ -11,6 +11,8 @@
 		</p>
 
 		<p class="little">* that's "Lampert" spelled backwards</p>
+
+		<p><a href="#" class="genericon genericon-collapse back-to-top"></a></p>
 	</header>
 
 <?php wp_footer(); ?>
