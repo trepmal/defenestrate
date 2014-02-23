@@ -347,18 +347,26 @@ input[type="submit"],
 input[type="button"],
 button,
 .button {
-	border: 1px solid #999;
-	padding: 5px;
-	background: #ccc;
+	border: none;
+	padding: 10px;
+	margin: 0;
+	background: #099;
 	font-family: 'Source Sans Pro';
 	font-size: 1rem;
 	cursor: pointer;
+	color: #ddd;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
 }
 input[type="submit"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-	background: #ddd;
+	background: #077;
+	color: #fff;
 }
 input[type="submit"]:active,
 input[type="button"]:active,
