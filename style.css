@@ -387,14 +387,51 @@ button:focus,
 #      #    # #    #   #   #    #    #   ## #    #  #  #
 #       ####   ####    #    ####     #    # #    #   ##
 */
-.home-link {
+.linkbar {
 	position: fixed;
 	z-index: 2;
 	top: 40px;
 	left: 40px;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	/*background: white;*/
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+	margin: 0;
+}
+/*.linkbar-2:hover { height: 80px; }
+.linkbar-3:hover { height: 120px; }
+.linkbar-4:hover { height: 160px; }
+.linkbar-5:hover { height: 200px; }
+.linkbar-6:hover { height: 240px; }
+.linkbar-7:hover { height: 280px; }
+.linkbar-8:hover { height: 320px; }
+.linkbar-9:hover { height: 360px; }
+.linkbar-10:hover { height: 400px; }*/
+
+.linkbar a {
 	font-size: 4em;
 	color: #ddd;
 	text-decoration: none;
+	display: block;
+	float:left;
+	width: 40px;
+	height: 40px;
+}
+.linkbar a:hover {
+	color: #099;
+}
+
+.home-link {
+/*	position: fixed;
+	z-index: 2;
+	top: 40px;
+	left: 40px;
+*/
 }
 /*
 nav.post-nav {
@@ -592,23 +629,58 @@ body .syntaxhighlighter {
 ##    ##  ##       ##    ## ##        ##     ## ##   ### ##    ##  ##    ## ##   ##
 ##     ## ########  ######  ##         #######  ##    ##  ######  ####    ###    ########
 */
+@media screen and (max-width: 990px) {
+	.linkbar {
+		top: 10px;
+		left: 10px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.post-nav-item {
+		position: static;
+		display: inline-block;
+		width: 50%;
+		text-align:center;
+		-o-transition:.5s;
+		-ms-transition:.5s;
+		-moz-transition:.5s;
+		-webkit-transition:.5s;
+		transition:.5s;
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.4rem;
+	}
+	.post-nav-item a {
+		display: block;
+		height: 100%;
+	}
+	.post-nav-item a:hover {
+		background: #fff;
+		color: #099;
+	}
+}
+@media screen and (max-width: 850px) {
+	.linkbar {
+		top: 5px;
+		left: 5px;
+	}
+	article {
+		padding: 5px;
+	}
+}
 @media screen and (max-width: 600px) {
 	h1 {
 		font-size: 2rem;
 	}
-	.home-link {
+	.linkbar {
 		position: static;
+		margin: 0 0 10px;
 	}
 	.container {
-		/*text-align: left;*/
 		font-size: 1.2rem;
-		/*line-height: 160%;*/
-		padding: 5px;
 	}
 	.entry-title {
 		padding: 15px 0;
-		/*position: relative;*/
-		/*overflow: hidden;*/
 	}
 
 	.comment-form-author,

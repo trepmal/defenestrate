@@ -17,7 +17,13 @@
 
 <?php
 	if ( ! is_home() ) {
-		echo '<a href="'. esc_url( home_url() ) .'" class="genericon genericon-home home-link" title="Home"></a>';
+		$links = array();
+		$links[] = '<a href="'. esc_url( home_url() ) .'" class="genericon genericon-home home-link" title="Home"></a>';
+		// $links[] = '<a href="'. esc_url( home_url() ) .'#2" class="genericon genericon-home home-link" title="Home"></a>';
+		// $links[] = '<a href="'. esc_url( home_url() ) .'#3" class="genericon genericon-home home-link" title="Home"></a>';
+		echo '<p class="linkbar">';
+		echo implode( $links );
+		echo '</p>';
 	}
 ?>
 
