@@ -29,6 +29,7 @@ class Footer_Links_Defenstrate_Option extends Defenestrate_Option {
 			'instagram'  => '',
 			'googleplus' => '',
 			'facebook'   => '',
+			'user'       => '',
 			'mail'       => '',
 		);
 
