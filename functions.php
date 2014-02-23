@@ -11,10 +11,10 @@
 */
 function defenestrate_theme_setup() {
 
-	register_nav_menus( array(
-		'primary'   => __( 'Top primary menu', 'defenestrate' ),
-		'secondary' => __( 'Secondary menu in left sidebar', 'defenestrate' ),
-	) );
+	// register_nav_menus( array(
+	// 	'primary'   => __( 'Top primary menu', 'defenestrate' ),
+	// 	'secondary' => __( 'Secondary menu in left sidebar', 'defenestrate' ),
+	// ) );
 
 	add_theme_support( 'automatic-feed-links' );
 
@@ -46,7 +46,7 @@ add_action( 'after_setup_theme', 'defenestrate_theme_setup' );
  *  - main
  *
  * Javascript
- *  - jquery
+ *  - main
  *  - comment-reply
  *
 */
@@ -195,3 +195,24 @@ function defenestrate_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
+
+/**
+ * Additional contact method fields in the profile
+ */
+function add_contact_fields( $user_contactmethods, $user ) {
+	$user_contactmethods['def-twitter']    = 'Twitter';
+	$user_contactmethods['def-github']     = 'GitHub';
+	$user_contactmethods['def-wordpress']  = 'WordPress.org';
+	$user_contactmethods['def-instagram']  = 'Instagram';
+	$user_contactmethods['def-googleplus'] = 'Google+';
+	$user_contactmethods['def-facebook']   = 'Facebook';
+	$user_contactmethods['def-mail']       = 'Public Email';
+	$user_contactmethods['def-user']       = 'About';
+	unset($user_contactmethods['yim']);
+	unset($user_contactmethods['jabber']);
+	return $user_contactmethods;
+}
+// add_filter('user_contactmethods', 'add_contact_fields', 10, 2);
+
+
+require_once( plugin_dir_path( __FILE__ ) . 'inc/options.php' );
