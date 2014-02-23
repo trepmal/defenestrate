@@ -29,6 +29,7 @@ function defenestrate_theme_setup() {
 		'search-form', 'comment-form', 'comment-list',
 	) );
 
+	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 800;
 	}
