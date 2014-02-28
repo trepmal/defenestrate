@@ -20,7 +20,11 @@
 			get_template_part( 'part', 'post-nav' );
 
 		else :
+			echo '<section class="posts-container">';
+
 			get_template_part( 'content', '404' );
+
+			echo '</section>';
 		endif;
 	?>
 	</div>
