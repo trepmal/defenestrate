@@ -3,7 +3,7 @@
 
 		<?php
 			$links = array();
-			foreach ( get_option( 'footer_links' ) as $network => $value ) {
+			foreach ( get_option( 'footer_links', array() ) as $network => $value ) {
 				$href = is_email( $value ) ? "mailto:$value" : $value;
 				$links[] = '<a href="'. esc_url( $href ) .'" class="genericon genericon-'. esc_attr( $network ) .'">'. esc_html( $network ) .'</a>';
 			}
