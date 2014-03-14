@@ -66,6 +66,12 @@ function defenestrate_css_js() {
 }
 add_action( 'wp_enqueue_scripts', 'defenestrate_css_js' );
 
+function defenestrate_css_js_hack() {
+	wp_deregister_script('jquery');
+	wp_register_script( 'jquery', '/wp-includes/js/jquery/jquery.js', array(), '1.11.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'defenestrate_css_js_hack' );
+
 /**
  * Create a nicely formatted and more specific title element text for output
  * in head of document, based on current view.
