@@ -14,16 +14,23 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="page">
 
 <?php
 	if ( ! is_home() ) {
 		$links = array();
 		$links[] = '<a href="'. esc_url( home_url() ) .'" class="genericon genericon-home home-link" title="Home"></a>';
-		// $links[] = '<a href="'. esc_url( home_url() ) .'#2" class="genericon genericon-home home-link" title="Home"></a>';
-		// $links[] = '<a href="'. esc_url( home_url() ) .'#3" class="genericon genericon-home home-link" title="Home"></a>';
 		echo '<p class="linkbar">';
 		echo implode( $links );
 		echo '</p>';
 	}
 ?>
 
+<div class="menubar">
+	<span class="hint">&middot; &middot; &middot;</span>
+	<ul>
+		<li><a href="<?php echo esc_url( home_url() ); ?>" class="genericon genericon-home" title="Home"></a></li>
+		<li><?php get_search_form(); ?></li>
+	</ul>
+
+</div>
