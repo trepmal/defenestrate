@@ -52,11 +52,22 @@ add_action( 'after_setup_theme', 'defenestrate_theme_setup' );
 */
 function defenestrate_css_js() {
 
-	wp_enqueue_style( 'font-google', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Antic+Slab' );
-	wp_enqueue_style( 'font-genericons', get_stylesheet_directory_uri(). '/genericons/genericons.css' );
-	wp_enqueue_style( 'defenestrate', get_stylesheet_uri(), array( 'font-google', 'font-genericons' ) );
+	// wp_enqueue_style( 'font-google', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Antic+Slab' );
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 
-	wp_enqueue_script( 'defenestrate', get_stylesheet_directory_uri() .'/js/functions.js', array( 'jquery' ), 1, true );
+		wp_enqueue_style( 'src-font-sourcesanspro', get_stylesheet_directory_uri(). '/src_css/sourcesanspro.css' );
+		wp_enqueue_style( 'src-font-anticslab', get_stylesheet_directory_uri(). '/src_css/anticslab.css' );
+		wp_enqueue_style( 'src-font-genericons', get_stylesheet_directory_uri(). '/src_css/genericons.css' );
+		wp_enqueue_style( 'src-defenestrate', get_stylesheet_directory_uri(). '/src_css/style.css', array( 'src-font-sourcesanspro', 'src-font-anticslab', 'src-font-genericons' ) );
+
+		wp_enqueue_script( 'src-defenestrate', get_stylesheet_directory_uri(). '/src_js/functions.js', array( 'jquery' ), 1, true );
+
+	} else {
+		// concat's and minify'd with grunt
+		wp_enqueue_style( 'defenestrate', get_stylesheet_directory_uri() .'/css/defenestrate.min.css', array(), 1 );
+		wp_enqueue_script( 'defenestrate', get_stylesheet_directory_uri() .'/js/defenestrate.min.js', array( 'jquery' ), 1, true );
+
+	}
 
 	// wp_enqueue_script( 'jquery' );
 	if ( is_single() ) {
