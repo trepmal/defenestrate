@@ -10,39 +10,20 @@ module.exports = function(grunt) {
       my_target: {
         files: {
           'js/defenestrate.min.js': [
-          	'src_js/functions.js'
+            'src_js/prism.js',
+            'src_js/functions.js'
           ]
         }
       }
     },
-    // concat: {
-    //   css: {
-    //     src: [
-    //         'fonts/sourcesanspro/sourcesanspro.css',
-    //         'fonts/anticslab.css',
-    //         'fonts/genericons/genericons.css',
-    //         'style.css'
-    //     ],
-    //     dest: 'defenestrate.css'
-    //   }
-    // },
-
-    // concat: {
-    //   all: {
-    //     src: [
-    //       'css/sourcesanspro.css',
-    //       'css/anticslab.css',
-    //       'css/genericons.css'
-    //     ],
-    //     dest: 'css/fonts.css'
-    //   }
-    // },
     cssmin: {
+      options: {
+        report: 'gzip'
+      },
       minify: {
         expand: true,
         cwd: 'src_css',
         src: [
-          // 'fonts/sourcesanspro/sourcesanspro.css',
           '*.css'
         ],
         dest: 'dest/',
@@ -52,7 +33,6 @@ module.exports = function(grunt) {
         files: {
           'css/defenestrate.min.css': [
             'dest/*.min.css'
-            // 'css/style.min.css'
           ]
         }
       }
