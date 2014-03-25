@@ -36,6 +36,31 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+    compress: {
+      main: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          // Each of the files in the src/ folder will be output to
+          // the dist/ folder each with the extension .gz.js
+          {
+            expand: true,
+            cwd: 'css/',
+            src: ['defenestrate.min.css'],
+            dest: 'css/',
+            ext: '.min.css.gz'
+          },
+          {
+            expand: true,
+            cwd: 'js/',
+            src: ['defenestrate.min.js'],
+            dest: 'js/',
+            ext: '.min.js.gz'
+          }
+        ]
+      }
     }
   });
 
@@ -46,6 +71,6 @@ module.exports = function(grunt) {
 // grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'compress']);
 
 };
