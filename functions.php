@@ -58,8 +58,9 @@ function defenestrate_css_js() {
 		wp_enqueue_style( 'src-font-sourcesanspro', get_stylesheet_directory_uri(). '/src_css/sourcesanspro.css' );
 		wp_enqueue_style( 'src-font-anticslab', get_stylesheet_directory_uri(). '/src_css/anticslab.css' );
 		wp_enqueue_style( 'src-font-genericons', get_stylesheet_directory_uri(). '/src_css/genericons.css' );
+		wp_enqueue_style( 'src-font-sourcecodepro', get_stylesheet_directory_uri(). '/src_css/sourcecodepro.css' );
 		wp_enqueue_style( 'src-prism', get_stylesheet_directory_uri(). '/src_css/prism.css' );
-		wp_enqueue_style( 'src-defenestrate', get_stylesheet_directory_uri(). '/src_css/style.css', array( 'src-font-sourcesanspro', 'src-font-anticslab', 'src-font-genericons' ) );
+		wp_enqueue_style( 'src-defenestrate', get_stylesheet_directory_uri(). '/src_css/style.css', array( 'src-font-sourcesanspro', 'src-font-anticslab', 'src-font-genericons', 'src-font-sourcecodepro' ) );
 
 		wp_enqueue_script( 'src-prism', get_stylesheet_directory_uri(). '/src_js/prism.js', array( 'jquery' ), 1, true );
 		wp_enqueue_script( 'src-defenestrate', get_stylesheet_directory_uri(). '/src_js/functions.js', array( 'jquery' ), 1, true );

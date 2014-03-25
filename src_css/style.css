@@ -74,10 +74,15 @@ code {
 	padding: 0 3px;
 	white-space: nowrap;
 	background: #ddd;
+	font-family: 'source_code_proregular';
+	font-size: 1.2rem;
 }
 pre {
+	/*font-size: 1.1rem;*/
+	/*line-height: 1.3rem;*/
+	font-family: 'source_code_proregular';
 	font-size: 1.1rem;
-	line-height: 1.3rem;
+	line-height: 1.4rem;
 	overflow-x: scroll;
 	border: 1px solid #eee;
 	padding: 5px;
