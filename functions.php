@@ -83,6 +83,12 @@ add_action( 'wp_enqueue_scripts', 'defenestrate_css_js' );
 function defenestrate_css_js_hack() {
 	wp_deregister_script('jquery');
 	wp_register_script( 'jquery', '/wp-includes/js/jquery/jquery.js', array(), '1.11.0', true );
+
+
+	$suffix = SCRIPT_DEBUG ? '' : '.min';
+	wp_deregister_script('comment-reply');
+	wp_register_script( 'comment-reply', "/wp-includes/js/comment-reply$suffix.js", array(), null, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'defenestrate_css_js_hack' );
 
