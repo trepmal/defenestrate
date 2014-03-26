@@ -52,7 +52,6 @@ add_action( 'after_setup_theme', 'defenestrate_theme_setup' );
 */
 function defenestrate_css_js() {
 
-	// wp_enqueue_style( 'font-google', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Antic+Slab' );
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 
 		wp_enqueue_style( 'src-font-sourcesanspro', get_stylesheet_directory_uri(). '/src_css/sourcesanspro.css' );
@@ -72,7 +71,6 @@ function defenestrate_css_js() {
 
 	}
 
-	// wp_enqueue_script( 'jquery' );
 	if ( is_single() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -80,6 +78,9 @@ function defenestrate_css_js() {
 }
 add_action( 'wp_enqueue_scripts', 'defenestrate_css_js' );
 
+/**
+ * Relocate core scripts to footer
+ */
 function defenestrate_css_js_hack() {
 	wp_deregister_script('jquery');
 	wp_register_script( 'jquery', '/wp-includes/js/jquery/jquery.js', array(), '1.11.0', true );
@@ -88,7 +89,6 @@ function defenestrate_css_js_hack() {
 	$suffix = SCRIPT_DEBUG ? '' : '.min';
 	wp_deregister_script('comment-reply');
 	wp_register_script( 'comment-reply', "/wp-includes/js/comment-reply$suffix.js", array(), null, true );
-
 }
 add_action( 'wp_enqueue_scripts', 'defenestrate_css_js_hack' );
 
@@ -132,8 +132,10 @@ function defenestrate_wp_link_pages_link( $link ) {
 }
 // add_filter( 'wp_link_pages_link', 'defenestrate_wp_link_pages_link' );
 
+/**
+ * Add post class indicating if it has a featured image
+ */
 function defenestrate_post_class( $classes, $class, $post_id ) {
-	// var_dump($class);
 	if ( has_post_thumbnail( $post_id) ) {
 		$classes[] = 'has-thumbnail';
 	}
@@ -221,24 +223,6 @@ function defenestrate_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
-
-/**
- * Additional contact method fields in the profile
- */
-function add_contact_fields( $user_contactmethods, $user ) {
-	$user_contactmethods['def-twitter']    = 'Twitter';
-	$user_contactmethods['def-github']     = 'GitHub';
-	$user_contactmethods['def-wordpress']  = 'WordPress.org';
-	$user_contactmethods['def-instagram']  = 'Instagram';
-	$user_contactmethods['def-googleplus'] = 'Google+';
-	$user_contactmethods['def-facebook']   = 'Facebook';
-	$user_contactmethods['def-mail']       = 'Public Email';
-	$user_contactmethods['def-user']       = 'About';
-	unset($user_contactmethods['yim']);
-	unset($user_contactmethods['jabber']);
-	return $user_contactmethods;
-}
-// add_filter('user_contactmethods', 'add_contact_fields', 10, 2);
 
 
 require_once( plugin_dir_path( __FILE__ ) . 'inc/options.php' );

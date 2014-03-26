@@ -15,7 +15,7 @@ class Footer_Links_Defenstrate_Option extends Defenestrate_Option {
 	function form_field( $name ) {
 		$this->before_form_field();
 
-		wp_enqueue_style( 'font-genericons', get_stylesheet_directory_uri(). '/genericons/genericons.css' );
+		wp_enqueue_style( 'font-genericons', get_stylesheet_directory_uri(). '/dest/genericons.min.css' );
 
 		wp_enqueue_script( 'defenestrate-repeater' );
 

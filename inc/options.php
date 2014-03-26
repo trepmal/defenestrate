@@ -16,7 +16,6 @@ class Defenestrate_Options {
 
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
 		add_action( 'admin_menu', array( &$this, 'menu' ) );
-		// add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
 
 		wp_register_script( 'defenestrate-media', get_template_directory_uri() .'/inc/js/options-media.js', array('jquery') );
 		wp_register_script( 'defenestrate-repeater', get_template_directory_uri() .'/inc/js/options-repeater.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable') );
@@ -31,12 +30,6 @@ class Defenestrate_Options {
 
 	function menu() {
 		add_theme_page( __( 'Defenestrate', 'defenestrate' ), __( 'Defenestrate Options', 'defenestrate' ), 'edit_posts', __CLASS__, array( &$this, 'page' ) );
-	}
-
-	function admin_enqueue_scripts( $hook ) {
-		if ( 'settings_page_Site_Options' != $hook ) return;
-		wp_enqueue_script( 'defenestrate', get_template_directory_uri() .'/js/admin/defenestrate.js', array('jquery') );
-		wp_enqueue_style( 'defenestrate', get_template_directory_uri() .'/css/admin/defenestrate.css' );
 	}
 
 	function page() {
