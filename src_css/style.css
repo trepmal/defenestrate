@@ -782,40 +782,37 @@ body .syntaxhighlighter {
 	.menubar:hover {
 		height: 45px;
 	}
-.menubar ul {
-	padding: 5px 0;
-}
-.menubar ul li {
-	font-size: 1.1rem;
-	/*padding: 0 5px;*/
-}
-.menubar ul li .genericon {
-	font-size: 2.3rem;
-	line-height: 2.3rem;
-	width: 3rem;
-	height: 3rem;
-}
+	.menubar ul {
+		padding: 5px 0;
+	}
+	.menubar ul li {
+		font-size: 1.1rem;
+	}
+	.menubar ul li .genericon {
+		font-size: 2.3rem;
+		line-height: 2.3rem;
+		width: 3rem;
+		height: 3rem;
+	}
 
-.menubar ul li form .genericon {
-	font-size: 20px;
-	height: 20px;
-	width: 20px;
-}
+	.menubar ul li form .genericon {
+		font-size: 20px;
+		height: 20px;
+		width: 20px;
+	}
 
-.menubar ul li .searchbar {
-	width: 25px;
-	height: 1.7rem;
-	font-size: 1.0rem;
-	margin-left: -28px;
-	padding: 0 0 0 28px;
-	position: relative;
-	top: 4px;
-	line-height: 1.5rem;
-}
-
+	.menubar ul li .searchbar {
+		width: 25px;
+		height: 1.7rem;
+		font-size: 1.0rem;
+		margin-left: -28px;
+		padding: 0 0 0 28px;
+		line-height: 1.5rem;
+	}
 
 	h1 {
 		font-size: 2rem;
+		line-height: 2.3rem;
 	}
 	.linkbar {
 		position: static;
