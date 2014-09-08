@@ -98,7 +98,7 @@ function defenestrate_async_styles( $tag, $handle ) {
       else window.addEventListener('load', cb);
     </script>";
 }
-add_filter( 'style_loader_tag', 'defenestrate_async_styles', 10, 2 );
+// add_filter( 'style_loader_tag', 'defenestrate_async_styles', 10, 2 );
 
 
 /**
