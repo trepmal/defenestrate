@@ -16,16 +16,6 @@
 <body <?php body_class(); ?>>
 <div id="page">
 
-<?php
-	// if ( ! is_home() ) {
-	// 	$links = array();
-	// 	$links[] = '<a href="'. esc_url( home_url() ) .'" class="genericon genericon-home home-link" title="Home"></a>';
-	// 	echo '<p class="linkbar">';
-	// 	echo implode( $links );
-	// 	echo '</p>';
-	// }
-?>
-
 <div class="menubar">
 	<div class="liner">
 	<ul class="mainmenu">
