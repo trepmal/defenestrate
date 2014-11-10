@@ -86,17 +86,17 @@ function defenestrate_async_styles( $tag, $handle ) {
 
 	$attr = wp_kses_hair( $tag, array( 'http', 'https' ) );
 	return "
-    <script>
-      var cb = function() {
-        var l = document.createElement('link'); l.rel = 'stylesheet';
-        l.href = '". esc_js( $attr['href']['value'] ) ."';
-        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-      };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-          webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(cb);
-      else window.addEventListener('load', cb);
-    </script>";
+	<script>
+	  var cb = function() {
+		var l = document.createElement('link'); l.rel = 'stylesheet';
+		l.href = '". esc_js( $attr['href']['value'] ) ."';
+		var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+	  };
+	  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+		  webkitRequestAnimationFrame || msRequestAnimationFrame;
+	  if (raf) raf(cb);
+	  else window.addEventListener('load', cb);
+	</script>";
 }
 // add_filter( 'style_loader_tag', 'defenestrate_async_styles', 10, 2 );
 
