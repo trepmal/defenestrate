@@ -27,10 +27,13 @@
 ?>
 
 <div class="menubar">
-	<span class="hint">&middot; &middot; &middot;</span>
-	<ul>
+	<div class="liner">
+	<!-- <span class="hint">&middot; &middot; &middot;</span> -->
+	<ul class="mainmenu">
 		<li><a href="<?php echo esc_url( home_url() ); ?>" class="genericon genericon-home" title="Home"></a></li>
-		<li><?php get_search_form(); ?></li>
+		<li><a href="<?php echo esc_url( home_url() ); ?>" title="Home"><?php bloginfo('name'); ?></a></li>
 	</ul>
 
+	<?php get_search_form(); ?>
+	</div>
 </div>
