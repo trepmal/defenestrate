@@ -61,13 +61,13 @@ function defenestrate_css_js() {
 		wp_enqueue_style( 'src-prism',              get_template_directory_uri(). '/src_css/prism.css' );
 		wp_enqueue_style( 'src-defenestrate',       get_template_directory_uri(). '/src_css/style.css', array( 'src-font-sourcesanspro', 'src-font-anticslab', 'src-font-genericons', 'src-font-sourcecodepro' ) );
 
-		wp_enqueue_script( 'src-prism',        get_template_directory_uri(). '/src_js/prism.js', array( 'jquery' ), 1, true );
+		wp_enqueue_script( 'src-prism',        get_template_directory_uri(). '/src_js/prism.js',     array( 'jquery' ), 1, true );
 		wp_enqueue_script( 'src-defenestrate', get_template_directory_uri(). '/src_js/functions.js', array( 'jquery' ), 1, true );
 
 	} else {
 		// concat's and minify'd with grunt
-		wp_enqueue_style( 'defenestrate',  get_template_directory_uri() .'/css/defenestrate.min.css', array(), '01' );
-		wp_enqueue_script( 'defenestrate', get_template_directory_uri() .'/js/defenestrate.min.js', array( 'jquery' ), '01', true );
+		wp_enqueue_style( 'defenestrate',  get_template_directory_uri() .'/css/defenestrate.min.css', array(), '02' );
+		wp_enqueue_script( 'defenestrate', get_template_directory_uri() .'/js/defenestrate.min.js',   array( 'jquery' ), '02', true );
 
 	}
 
