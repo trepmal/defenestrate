@@ -1,13 +1,13 @@
 <?php
 
-$footer_links_defenestrate_option = new Footer_Links_Defenstrate_Option();
+$footer_links_defenestrate_option = new Footer_Links_Defenestrate_Option();
 
-class Footer_Links_Defenstrate_Option extends Defenestrate_Option {
+class Footer_Links_Defenestrate_Option extends Defenestrate_Option {
 
 	function __construct() {
-		$this->option_name     = 'footer_links';
-		$this->option_label    = 'Footer Links';
-		$this->option_callback = array( $this, 'form_field' );
+		$this->option_name         = 'footer_links';
+		$this->option_label        = 'Footer Links';
+		$this->option_callback     = array( $this, 'form_field' );
 		$this->option_sanitization = array( $this, 'sanitize' );
 		parent::__construct();
 	}
