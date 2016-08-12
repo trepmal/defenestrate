@@ -66,7 +66,7 @@ function defenestrate_css_js() {
 
 	} else {
 		// concat's and minify'd with grunt
-		wp_enqueue_style( 'defenestrate',  get_template_directory_uri() .'/css/defenestrate.min.css', array(), '03' );
+		wp_enqueue_style( 'defenestrate',  get_template_directory_uri() .'/css/defenestrate.min.css', array(), '04' );
 		wp_enqueue_script( 'defenestrate', get_template_directory_uri() .'/js/defenestrate.min.js',   array( 'jquery' ), '02', true );
 
 	}
