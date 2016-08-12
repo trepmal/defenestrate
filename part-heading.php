@@ -5,7 +5,7 @@ if ( ! is_archive() &&  ! is_search() ) return;
 ?>
 
 <header class="archive-header">
-	<div class="liner">
+	<!-- <div class="liner"> -->
 	<h1 class="archive-title">
 
 	<?php
@@ -34,5 +34,5 @@ if ( ! is_archive() &&  ! is_search() ) return;
 		endif;
 	?>
 
-	</div>
+	<!-- </div> -->
 </header>
