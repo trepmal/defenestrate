@@ -54,15 +54,15 @@ function defenestrate_css_js() {
 
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 
-		wp_enqueue_style( 'src-font-sourcesanspro', get_template_directory_uri(). '/src_css/sourcesanspro.css' );
-		wp_enqueue_style( 'src-font-anticslab',     get_template_directory_uri(). '/src_css/anticslab.css' );
-		wp_enqueue_style( 'src-font-genericons',    get_template_directory_uri(). '/src_css/genericons.css' );
-		wp_enqueue_style( 'src-font-sourcecodepro', get_template_directory_uri(). '/src_css/sourcecodepro.css' );
-		wp_enqueue_style( 'src-prism',              get_template_directory_uri(). '/src_css/prism.css' );
-		wp_enqueue_style( 'src-defenestrate',       get_template_directory_uri(). '/src_css/style.css', array( 'src-font-sourcesanspro', 'src-font-anticslab', 'src-font-genericons', 'src-font-sourcecodepro' ) );
+		// wp_enqueue_style( 'src-font-sourcesanspro', get_template_directory_uri(). '/src/css/sourcesanspro.css' );
+		wp_enqueue_style( 'src-font-anticslab',     get_template_directory_uri(). '/src/css/anticslab.css' );
+		wp_enqueue_style( 'src-font-genericons',    get_template_directory_uri(). '/src/css/genericons.css' );
+		// wp_enqueue_style( 'src-font-sourcecodepro', get_template_directory_uri(). '/src/css/sourcecodepro.css' );
+		wp_enqueue_style( 'src-prism',              get_template_directory_uri(). '/src/css/prism.css' );
+		wp_enqueue_style( 'src-defenestrate',       get_template_directory_uri(). '/src/css/style.css', array( 'src-font-anticslab', 'src-font-genericons' ) );
 
-		wp_enqueue_script( 'src-prism',        get_template_directory_uri(). '/src_js/prism.js',     array( 'jquery' ), 1, true );
-		wp_enqueue_script( 'src-defenestrate', get_template_directory_uri(). '/src_js/functions.js', array( 'jquery' ), 1, true );
+		wp_enqueue_script( 'src-prism',        get_template_directory_uri(). '/src/js/prism.js',     array( 'jquery' ), 1, true );
+		wp_enqueue_script( 'src-defenestrate', get_template_directory_uri(). '/src/js/functions.js', array( 'jquery' ), 1, true );
 
 	} else {
 		// concat's and minify'd with grunt
@@ -197,20 +197,24 @@ function defenestrate_comment( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<header class="comment-meta comment-author vcard">
 				<?php
-					echo get_avatar( $comment, 44 );
+					echo get_avatar( $comment, 50 );
 					// edit_comment_link( __( 'Edit', 'defenestrate' ), ' <span class="edit-link">', '</span>' );
-					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
+					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
 						''
 						// ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'defenestrate' ) . '</span>' : ''
 					);
+					echo ' // ';
 					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
 						sprintf( __( '%1$s at %2$s', 'defenestrate' ), get_comment_date(), get_comment_time() )
 					);
+
+					comment_reply_link( array_merge( $args, array( 'reply_text' => __( '&#8617;', 'defenestrate' ),'title' => __( 'Reply', 'defenestrate' ), 'before' => ' // ', 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
+
 				?>
 			</header><!-- .comment-meta -->
 
@@ -239,7 +243,7 @@ function defenestrate_comment( $comment, $args, $depth ) {
 				?>
 			</footer>--><!-- .comment-meta -->
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'defenestrate' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php

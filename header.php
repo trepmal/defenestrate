@@ -17,12 +17,9 @@
 <div id="page">
 
 <div class="menubar">
-	<div class="liner">
+	<?php get_search_form(); ?>
 	<ul class="mainmenu">
-<!-- 		<li><a href="<?php echo esc_url( home_url() ); ?>" class="genericon genericon-home" title="Home"></a></li>
- -->		<li><a href="<?php echo esc_url( home_url() ); ?>" title="Home"><?php bloginfo('name'); ?></a></li>
+		<li><a href="<?php echo esc_url( home_url() ); ?>" title="Home"><?php bloginfo('name'); ?></a></li>
 	</ul>
 
-	<?php get_search_form(); ?>
-	</div>
 </div>

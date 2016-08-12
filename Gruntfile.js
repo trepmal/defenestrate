@@ -10,19 +10,20 @@ module.exports = function(grunt) {
       my_target: {
         files: {
           'js/defenestrate.min.js': [
-            'src_js/prism.js',
-            'src_js/functions.js'
+            'src/js/prism.js',
+            'src/js/functions.js'
           ]
         }
       }
     },
     cssmin: {
       options: {
-        report: 'gzip'
+        report: 'gzip',
+        root: '../../../'
       },
       minify: {
         expand: true,
-        cwd: 'src_css',
+        cwd: 'src/css',
         src: [
           '*.css'
         ],

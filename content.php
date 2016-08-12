@@ -9,9 +9,9 @@
 		?>
 		<div class="entry-title">
 		<?php // if ( is_singular() ) the_post_thumbnail('post-thumbnail'); ?>
-		<h1 class="liner"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+		<h1><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 		</div>
-		<div class="liner entry-content">
+		<div class="entry-content">
 			<?php get_template_part( 'part', 'byline' ); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
@@ -27,17 +27,15 @@
 				// 'echo'             => 1
 			) ); ?>
 			<?php if ( is_single() ) : ?>
-		<footer class="liner">
+		<footer>
 			Posted in <?php the_category( ', ' );  the_tags( ' as well as ', ', ' ); ?>.
 		</footer>
 	<?php endif; ?>
 		</div>
 	</article>
-		<!-- <div class="liner entry-comments"> -->
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-			?>
-		<!-- </div> -->
+	<?php
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		}
+	?>
