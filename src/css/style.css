@@ -77,20 +77,11 @@ h5:before {
 	position: absolute;
 	right: calc( 100% + 5px );
 }
-h2:before {
-	content: '## ';
-}
 h3 {
 	font-size: 1.5rem;
 }
-h3:before {
-	content: '### ';
-}
 h4 {
 	font-size: 1.3rem;
-}
-h4:before {
-	content: '### ';
 }
 h5 {
 	font-size: 1.1rem;
@@ -128,6 +119,12 @@ table {
 	line-height: 1.6rem;
 }
 blockquote {
+	border-left: 2px solid #ddd;
+	padding: 10px;
+	margin: 15px;
+}
+blockquote.wp-block-pullquote {
+	border-left: 0;
 }
 blockquote p {
 	margin: 0;
@@ -315,20 +312,20 @@ header.page-footer {
 .comment-list {
 	padding: 0;
 	margin: 0;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	line-height: 160%;
 }
 .comment-list li {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 30px 0;
 }
 .comment-list li.bypostauthor {
 	/*box-shadow: 1px 1px 12px #9dd;*/
 }
 
 li.comment .children {
-	margin: 0 0 0 50px;
+	margin: 20px 0 0 50px;
 	padding:0;
 }
 li.comment li.comment {
@@ -339,11 +336,14 @@ li.comment li.comment {
 	line-height: 1.3rem;
 }
 	header.comment-meta {
-		border-bottom: 1px solid #eee;
+		/*border-bottom: 1px solid #eee;*/
 	}
 	.bypostauthor header.comment-meta {
 		border-color: #9bb;
 	}
+		header.comment-meta a.comment-permalink {
+			font-size: 0.7rem;
+		}
 		header.comment-meta .avatar {
 			vertical-align: middle;
 			margin: 0 5px 0 0;
@@ -352,11 +352,14 @@ li.comment li.comment {
 		text-align: left;
 	}
 	.comment-meta cite {
+		font-style: normal;
 	}
 .comment-content {
-	margin-left: 50px;
-	padding: 5px;
-	border-left: 1px solid #eee;
+	border: 1px solid #eee;
+	margin: 10px;
+	margin-left: 60px;
+	padding: 10px;
+	/*border-left: 1px solid #eee;*/
 }
 .bypostauthor .comment-content {
 	border-color: #9bb;
@@ -368,7 +371,7 @@ li.comment:last-child {
 	padding-bottom: 0;
 }
 li.comment .reply {
-	text-align:right;
+	text-align: left;
 }
 
 #respond {

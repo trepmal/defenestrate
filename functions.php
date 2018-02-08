@@ -205,15 +205,13 @@ function defenestrate_comment( $comment, $args, $depth ) {
 						''
 						// ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'defenestrate' ) . '</span>' : ''
 					);
-					echo ' // ';
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+					// echo ' // ';
+					printf( '<a href="%1$s" class="comment-permalink"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
 						sprintf( __( '%1$s at %2$s', 'defenestrate' ), get_comment_date(), get_comment_time() )
 					);
-
-					comment_reply_link( array_merge( $args, array( 'reply_text' => __( '&#8617;', 'defenestrate' ),'title' => __( 'Reply', 'defenestrate' ), 'before' => ' // ', 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
 
 				?>
 			</header><!-- .comment-meta -->
@@ -224,27 +222,27 @@ function defenestrate_comment( $comment, $args, $depth ) {
 
 			<section class="comment-content">
 				<?php comment_text(); ?>
+			<div class="reply">
+				<?php
+
+					comment_reply_link(
+						array_merge(
+							$args,
+							array(
+								'reply_text' => __( '&#8617;', 'defenestrate' ),
+								'title' => __( 'Reply', 'defenestrate' ),
+								// 'before' => ' // ',
+								'after' => '',
+								'depth' => $depth,
+								'max_depth' => $args['max_depth']
+							)
+						)
+					);
+
+				?>
+			</div><!-- .reply -->
 			</section><!-- .comment-content -->
 
-			<!--<footer class="comment-meta comment-author comment-timestamp">
-				<?php
-					// echo get_avatar( $comment, 44 );
-					// printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
-					// 	get_comment_author_link(),
-					// 	// If current post author is also comment author, make it known visually.
-					// 	( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'defenestrate' ) . '</span>' : ''
-					// );
-					// printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-					// 	esc_url( get_comment_link( $comment->comment_ID ) ),
-					// 	get_comment_time( 'c' ),
-					// 	/* translators: 1: date, 2: time */
-					// 	sprintf( __( '%1$s at %2$s', 'defenestrate' ), get_comment_date(), get_comment_time() )
-					// );
-				?>
-			</footer>--><!-- .comment-meta -->
-			<div class="reply">
-				
-			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php
 		break;
